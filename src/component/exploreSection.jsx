@@ -1,7 +1,20 @@
+import { Suspense, use, useState } from "react"
 import Card from "./card"
 import StackSection from "./stackSection"
 
-const ExplorSection = () => {
+
+
+const ExplorSection = ({techData}) => {
+
+    let [stackData,setStackData]=useState([]);
+    console.log(stackData)
+
+
+
+
+
+
+
     return (<>
         <div className="container mx-auto px-2">
             <div className="text-center md:text-start">
@@ -14,18 +27,17 @@ const ExplorSection = () => {
             </div>
 
             <div className="py-7 grid md:grid-cols-4 gap-7 ">
+                <Suspense fallback={<p>LODING...</p>}>
                 <div className="grid md:grid-cols-3 gap-3 col-span-3">
-
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    
+                     <Card techData={techData} stackData={stackData} setStackData={setStackData}/>
+                    
+                   
 
                 </div>
+                 </Suspense>
                 <div>
-                    <StackSection/>
+                    <StackSection stackData={stackData} setStackData={setStackData}/>
                 </div>
             </div>
 

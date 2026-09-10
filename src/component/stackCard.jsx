@@ -1,7 +1,7 @@
 import { RxCross1 } from "react-icons/rx";
 
 
-const StackCard = () => {
+const StackCard = ({stackData,setStackData}) => {
     return (<>
         <div className="border border-[#66708593] flex justify-between items-center px-4 rounded-[10px]">
             <div className="flex justify-center items-center gap-2"> 

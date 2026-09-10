@@ -4,12 +4,17 @@ import Hero from './component/hero'
 import ExplorSection from './component/exploreSection'
 import Footer from './component/footer'
 const App=()=>{
+ const techData= async() => {
 
+        let fetchData=await fetch('/data.json')
+        let convertJson=await fetchData.json()
+        return convertJson
+    }
   
   return(<>
   <Navber/>
     <Hero/>
-    <ExplorSection/>
+    <ExplorSection techData={techData()}/>
     <Footer/>
 
 
