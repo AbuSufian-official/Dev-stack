@@ -1,3 +1,6 @@
+import Card from "./card"
+import StackSection from "./stackSection"
+
 const ExplorSection = () => {
     return (<>
         <div className="container mx-auto px-2">
@@ -10,22 +13,22 @@ const ExplorSection = () => {
                 </p>
             </div>
 
-            <div className="py-7 grid md:grid-cols-4 gap-14 ">
-                <div className="grid md:grid-cols-3 gap-5 col-span-3">
-              
-                <li className="border">card01</li>
-                <li className="border">card01</li>
-                <li className="border">card01</li>
-                <li className="border">card01</li>
-                <li className="border">card01</li>
-                <li className="border">card01</li>
-            
+            <div className="py-7 grid md:grid-cols-4 gap-7 ">
+                <div className="grid md:grid-cols-3 gap-3 col-span-3">
+
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+
+                </div>
+                <div>
+                    <StackSection/>
+                </div>
             </div>
-            <div>
-                <li className="border">selecte section</li>
-            </div>
-            </div>
-            
+
 
 
 
