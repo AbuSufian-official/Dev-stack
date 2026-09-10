@@ -28,7 +28,7 @@ const ExplorSection = ({techData}) => {
 
             <div className="py-7 grid md:grid-cols-4 gap-7 ">
                 <Suspense fallback={<p>LODING...</p>}>
-                <div className="grid md:grid-cols-3 gap-3 col-span-3">
+                <div className="grid md:grid-cols-3 gap-3 md:col-span-3">
                     
                      <Card techData={techData} stackData={stackData} setStackData={setStackData}/>
                     

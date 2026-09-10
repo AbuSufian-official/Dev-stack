@@ -8,15 +8,21 @@ const StackSection = ({stackData,setStackData}) => {
                 
                 {stackData.length==0?"No technologies selected yet.":`${stackData.length} Technology Selected`}
             </p>
-
-
-            <div className="mt-6 flex flex-col justify-center items-center border border-dashed border-[#bdbec0] px-4 py-4 rounded-[20px]">
+            {stackData.length==0?(<div className="mt-6 flex flex-col justify-center items-center border border-dashed border-[#bdbec0] px-4 py-4 rounded-[20px]">
                 <p className="text-[#667085c9]">Your stack is empty.</p>
-            </div>
+            </div>):(<div className="flex flex-col gap-2 py-3">
+                {stackData.map((stackObj)=>{
+                    return(<>
+                    <StackCard stackObj={stackObj} stackData={stackData} setStackData={setStackData} />
+                    
+                    </>)
+                })}
+                
+
+            <button onClick={()=>setStackData([])} className="mt-4 w-full py-2 border border-[#d82c20a7] text-[#D82C20] text-[19px] font-bold rounded-[10px] hover:bg-[#D82C20] hover:text-white transition-all">Remove All</button></div>
+            )}
 
 
-            <StackCard stackData={stackData} setStackData={setStackData} />
-            <button className=" w-full py-2 border border-[#d82c20a7] text-[#D82C20] text-[19px] font-bold rounded-[10px] hover:bg-[#D82C20] hover:text-white transition-all">Remove All</button>
 
         </div>
 

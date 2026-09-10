@@ -1,21 +1,35 @@
 import { RxCross1 } from "react-icons/rx";
 
 
-const StackCard = ({stackData,setStackData}) => {
+const StackCard = ({stackData,setStackData,stackObj}) => {
+
+    function handelDelBtn(value){
+        if(stackData.includes(value)){
+            let filterData=stackData.filter((n)=>n.id!==value.id)
+            setStackData(filterData)
+        }
+
+    }
+
     return (<>
-        <div className="border border-[#66708593] flex justify-between items-center px-4 rounded-[10px]">
+        <div className="border border-[#66708593] flex justify-between items-center px-4 py-3 rounded-[10px]">
             <div className="flex justify-center items-center gap-2"> 
                 <div>
-                    <RxCross1 />
+                    {/* <RxCross1 />
+                     */}
+                     <img src={stackObj.icon} alt={stackObj.name} width={'30px'}/>
                 </div>
                 
                 <div>
-                    <p className="text-[16px] font-bold">Name</p>
-                    <p className="text-[12px] font-bold text-[#667085ad] ">Frontend</p>
+                    <p className="text-[16px] font-bold">{stackObj.name}</p>
+                    <p className="text-[12px] font-bold text-[#667085ad] ">{stackObj.category}</p>
                 </div>
             </div>
             <div>
-                <RxCross1 />
+                <button onClick={()=>handelDelBtn(stackObj)} className="cursor-pointer hover:text-[#D91B7E]  text-[23px]">
+                         <RxCross1 />
+                </button>
+               
             </div>
 
 
