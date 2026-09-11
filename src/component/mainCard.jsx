@@ -1,23 +1,47 @@
-import { useState} from "react";
+import { useState } from "react";
+import { FaCheck } from "react-icons/fa";
+import { Bounce,toast  } from "react-toastify";
 
-const MainCard=({obj,stackData,setStackData})=>{
-
-
-let [isSelectStack,setSelecIsSiack] =useState(false)
-function handelSelectStackBtn(value){
-  setSelecIsSiack(true)
-  setStackData([...stackData,value])
-}
+const MainCard = ({ obj, stackData, setStackData }) => {
 
 
-    return(<>
-    <div key={obj.id} className="text-[15px] w-full md:w-auto max-w-[540px] rounded-[28px] border border-[#e7edf5] bg-white px-4 py-6">
-      
+  let [isSelectStack, setSelecIsSiack] = useState(false)
+  function handelSelectStackBtn(value) {
+    setSelecIsSiack(true)
+
+
+    if (Boolean(stackData.find(n => n.id == value.id))) {
+      return;
+    } else {
+      setStackData([...stackData, value])
+
+
+
+      toast(`${value.name} add to stack`, {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+
+  }
+
+
+
+  return (<>
+    <div key={obj.id} className={`${isSelectStack ? `border-[#D91B7E]` : `border-[#e7edf5]`} text-[15px] w-full md:w-auto max-w-[540px] rounded-[28px] border  bg-white px-4 py-6`}>
+
       {/* Top Section */}
       <div className="flex items-start justify-between">
-        
+
         {/* React Logo */}
-        <img src={obj.icon} alt={obj.name} width={'40px'}/>
+        <img src={obj.icon} alt={obj.name} width={'40px'} />
 
         {/* Popular Badge */}
         <span className="rounded-full border border-[#d7edff] bg-[#f0f9ff] px-5 py-2  font-medium text-[#0798e8]">
@@ -41,7 +65,7 @@ function handelSelectStackBtn(value){
 
       {/* Information */}
       <div className="flex  items-center justify-between gap-2">
-        
+
         {/* Category */}
         <span className="rounded-lg bg-[#f3f6fa] px-4 py-2  font-medium text-[#40516a]">
           {obj.category}
@@ -53,7 +77,7 @@ function handelSelectStackBtn(value){
         </span>
 
         {/* Rating */}
-        <div className="flex items-center gap-1  font-medium text-[#40516a]">
+        <div className=" flex items-center gap-1  font-medium text-[#40516a]">
           <span className=" text-[#ffb411]">★</span>
           <span>{obj.rating}</span>
         </div>
@@ -61,31 +85,35 @@ function handelSelectStackBtn(value){
 
       {/* Button */}
       <button
-      onClick={()=>handelSelectStackBtn(obj)}
-      disabled={isSelectStack}
-        className="
+        onClick={() => handelSelectStackBtn(obj)}
+
+        className={`
+          ${isSelectStack ? `bg-[#d91b7d34]` : `bg-[#080d1b]`} 
+          ${isSelectStack ? `text-[#d91b7d]` : `  text-white`}  
           mt-7
-          w-full
+          w-full 
           rounded-[15px]
-          bg-[#080d1b]
+          justify-center
           px-5
           py-3
+          items-center
+          font-bold 
+          text-center 
+          flex 
+          flex-row
           
-          font-medium
-          text-white
           transition-all
           duration-300
-          hover:-translate-y-1
-          hover:bg-[#111827]
+          hover:-translate-y-1 
           hover:shadow-[0_10px_25px_rgba(8,13,27,0.18)]
           active:translate-y-0
-        "
+        `}
       >
-        {isSelectStack?"Seleted":'Add to Stack'}
+        {isSelectStack ? (<span className="flex items-center gap-3"><FaCheck />Add to Stack </span>) : 'Add to Stack'}
       </button>
     </div>
-    
-    
-    </>)
+
+
+  </>)
 }
 export default MainCard

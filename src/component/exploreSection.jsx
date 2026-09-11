@@ -1,14 +1,16 @@
 import { Suspense, use, useState } from "react"
 import Card from "./card"
 import StackSection from "./stackSection"
+import Loader from "./loder";
 
 
 
 const ExplorSection = ({techData}) => {
 
     let [stackData,setStackData]=useState([]);
-    console.log(stackData)
+    
 
+   
 
 
 
@@ -27,7 +29,7 @@ const ExplorSection = ({techData}) => {
             </div>
 
             <div className="py-7 grid md:grid-cols-4 gap-7 ">
-                <Suspense fallback={<p>LODING...</p>}>
+                <Suspense fallback={<div className="md:col-span-3"><Loader/></div>}>
                 <div className="grid md:grid-cols-3 gap-3 md:col-span-3">
                     
                      <Card techData={techData} stackData={stackData} setStackData={setStackData}/>
@@ -37,7 +39,7 @@ const ExplorSection = ({techData}) => {
                 </div>
                  </Suspense>
                 <div>
-                    <StackSection stackData={stackData} setStackData={setStackData}/>
+                    <StackSection  stackData={stackData} setStackData={setStackData}/>
                 </div>
             </div>
 

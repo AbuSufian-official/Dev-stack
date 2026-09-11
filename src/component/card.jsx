@@ -20,7 +20,7 @@ let data=use(techData)
     <>
     {data.map((obj)=>{
       return(<>
-              <MainCard obj={obj} stackData={stackData} setStackData={setStackData}/>
+              <MainCard  obj={obj} stackData={stackData} setStackData={setStackData}/>
       
       </>)
     })}
