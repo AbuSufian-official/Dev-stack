@@ -16,13 +16,6 @@ const App=()=>{
     <Hero/>
     <ExplorSection techData={techData()}/>
     <Footer/>
-
-
-
-
-
-
-
   <ToastContainer
 position="bottom-right"
 autoClose={5000}

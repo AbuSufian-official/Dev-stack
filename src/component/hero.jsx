@@ -110,7 +110,4 @@ const Hero = () => {
     );
 };
 
-// w-[350px]
-//sm:w-[300px]
-
 export default Hero;

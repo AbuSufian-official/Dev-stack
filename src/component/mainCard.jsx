@@ -35,7 +35,7 @@ const MainCard = ({ obj, stackData, setStackData }) => {
 
 
   return (<>
-    <div key={obj.id} className={`${isSelectStack ? `border-[#D91B7E]` : `border-[#e7edf5]`} text-[15px] w-full md:w-auto max-w-[540px] rounded-[28px] border  bg-white px-4 py-6`}>
+    <div key={obj.id} className={`${isSelectStack ? `border-[#D91B7E]` : `border-[#e7edf5]`} text-[15px] w-full md:w-auto  rounded-[28px] border  bg-white px-4 py-6`}>
 
       {/* Top Section */}
       <div className="flex items-start justify-between">

@@ -9,6 +9,7 @@ const ExplorSection = ({techData}) => {
 
     let [stackData,setStackData]=useState([]);
     
+    
 
    
 
