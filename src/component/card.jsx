@@ -1,21 +1,23 @@
-import { use,} from "react";
+import { use, } from "react";
 import MainCard from "./mainCard";
 
 
-const Card = ({techData,stackData,setStackData}) => {
+const Card = ({ techData,stackData,setStackData,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj,}) => {
+ 
 
-
-let data=use(techData)
+  let data = use(techData)
 
   return (
 
     <>
-    {data.map((obj)=>{
-      return(<>
-              <MainCard  obj={obj} stackData={stackData} setStackData={setStackData}/>
-      
-      </>)
-    })}
+
+               {data.map((obj) => {
+            return (<>
+              <MainCard obj={obj} stackData={stackData} setStackData={setStackData} isStackhasSelectedDataObj={isStackhasSelectedDataObj} setIsStackhasSelectedDataObj={setIsStackhasSelectedDataObj} />
+
+            </>)
+          })}
+
 
     </>
   );

@@ -8,6 +8,14 @@ import Loader from "./loder";
 const ExplorSection = ({techData}) => {
 
     let [stackData,setStackData]=useState([]);
+
+    // function isStackhasSelectedCard(valuee){
+    //     // let find=stackData.some((n)=>n==value)
+    //     // return find;
+    //     return 
+
+    // }
+    console.log(use(techData))
     
     
     return (<>
@@ -25,7 +33,7 @@ const ExplorSection = ({techData}) => {
                 <Suspense fallback={<div className="md:col-span-3"><Loader/></div>}>
                 <div className="grid sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 gap-3 md:col-span-3">
                     
-                     <Card techData={techData} stackData={stackData} setStackData={setStackData}/>
+                     <Card  techData={techData} stackData={stackData} setStackData={setStackData}/>
                     
                 </div>
                  </Suspense>

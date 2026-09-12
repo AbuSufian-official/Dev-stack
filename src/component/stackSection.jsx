@@ -1,6 +1,6 @@
 import StackCard from "./stackCard"
 import { Bounce,toast  } from "react-toastify";
-const StackSection = ({stackData,setStackData}) => {
+const StackSection = ({stackData,setStackData,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj}) => {
 
 
     function hendelRemoveAllBtn(){
@@ -30,7 +30,7 @@ transition: Bounce,
             </div>):(<div className="flex flex-col gap-2 py-3">
                 {stackData.map((stackObj)=>{
                     return(<>
-                    <StackCard  stackObj={stackObj} stackData={stackData} setStackData={setStackData} />
+                    <StackCard  stackObj={stackObj} stackData={stackData} setStackData={setStackData} isStackhasSelectedDataObj={isStackhasSelectedDataObj}  setIsStackhasSelectedDataObj={setIsStackhasSelectedDataObj} />
                     
                     </>)
                 })}

@@ -1,12 +1,13 @@
 import { RxCross1 } from "react-icons/rx";
 import { toast,Bounce } from 'react-toastify';
 
-const StackCard = ({ stackData, setStackData, stackObj }) => {
+const StackCard = ({ stackData, setStackData, stackObj,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj }) => {
 
     function handelDelBtn(value) {
         if (stackData.includes(value)) {
             let filterData = stackData.filter((n) => n.id !== value.id)
             setStackData(filterData)
+            setIsStackhasSelectedDataObj(value)
 
             toast.success(`${value.name} remove from stack`, {
                 position: "bottom-right",
