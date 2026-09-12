@@ -2,7 +2,7 @@ import sideimg from './../assets/banner-stack.png'
 const Hero = () => {
     return (
         <section className="w-full overflow-hidden bg-white">
-            <div className="container mx-auto px-2 flex flex-col md:flex-row items-center py-5 md:py-2 ">
+            <div className="w-[95%] mx-auto px-2 flex flex-col md:flex-row gap-0 sm:gap-2 justify-between items-center py-5 md:py-2 ">
 
                 {/* LEFT CONTENT */}
                 <div className="flex flex-col justify-center items-center md:items-start md:justify-normal w-full md:w-[55%]">
@@ -20,14 +20,15 @@ const Hero = () => {
                         your next project.
                     </p>
 
-                    {/* BUTTONS */}
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
+                
+                    <div className="mt-8 text-[14px] flex items-center gap-1 sm:gap-4">
 
                         <button
                             className="
                 rounded-md
                 bg-gradient-to-r from-[#ff6a00] to-[#ec4899]
                 px-3 py-2
+                
                  font-semibold text-white
                 shadow-sm
                 transition-all duration-300
@@ -60,39 +61,12 @@ const Hero = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="hidden md:w-[45%] items-center justify-center lg:flex">
-
-                    <div className="group ">
-
-                    
-
-                        <img
+                <img
                             src={sideimg}
                             alt="Development Stack"
                             className="
-               
-                
-                object-contain
-                transition-all duration-500 ease-out
-                group-hover:-translate-y-3
-                group-hover:scale-105
-              "
-                        />
-
-                    </div>
-                </div>
-
-                {/* MOBILE IMAGE */}
-                <div className="mt-12 flex w-full justify-center lg:hidden">
-                    <div className="group ">
-
-                    
-
-                        <img
-                            src={sideimg}
-                            alt="Development Stack"
-                            className="
-                
+                            
+                md:w-[45%]
                 
                 object-contain
                 transition-all duration-500
@@ -101,9 +75,9 @@ const Hero = () => {
                 
               "
                         />
+               
 
-                    </div>
-                </div>
+                
 
             </div>
         </section>

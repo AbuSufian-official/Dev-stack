@@ -10,16 +10,8 @@ const ExplorSection = ({techData}) => {
     let [stackData,setStackData]=useState([]);
     
     
-
-   
-
-
-
-
-
-
     return (<>
-        <div className="container mx-auto px-2">
+        <div className="w-[95%]  mx-auto px-2">
             <div className="text-center md:text-start">
                 <h2 className=" md:text-start text-3xl md:text-4xl font-extrabold tracking-[-1.5px] text-[#101828] ">
                     Explore the <span className="ml-2 bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0] bg-clip-text text-transparent">Technologies</span>
@@ -31,34 +23,16 @@ const ExplorSection = ({techData}) => {
 
             <div className="py-7 grid md:grid-cols-4 gap-7 ">
                 <Suspense fallback={<div className="md:col-span-3"><Loader/></div>}>
-                <div className="grid md:grid-cols-3 gap-3 md:col-span-3">
+                <div className="grid sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 gap-3 md:col-span-3">
                     
                      <Card techData={techData} stackData={stackData} setStackData={setStackData}/>
                     
-                   
-
                 </div>
                  </Suspense>
                 <div>
                     <StackSection  stackData={stackData} setStackData={setStackData}/>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>

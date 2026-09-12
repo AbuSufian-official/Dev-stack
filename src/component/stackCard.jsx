@@ -8,7 +8,7 @@ const StackCard = ({ stackData, setStackData, stackObj }) => {
             let filterData = stackData.filter((n) => n.id !== value.id)
             setStackData(filterData)
 
-            toast(`${value.name} remove from stack`, {
+            toast.success(`${value.name} remove from stack`, {
                 position: "bottom-right",
                 autoClose: 1000,
                 hideProgressBar: false,
@@ -28,8 +28,6 @@ const StackCard = ({ stackData, setStackData, stackObj }) => {
         <div className="border border-[#66708593] flex justify-between items-center px-4 py-3 rounded-[10px]">
             <div className="flex justify-center items-center gap-2">
                 <div>
-                    {/* <RxCross1 />
-                     */}
                     <img src={stackObj.icon} alt={stackObj.name} width={'30px'} />
                 </div>
 
@@ -44,9 +42,6 @@ const StackCard = ({ stackData, setStackData, stackObj }) => {
                 </button>
 
             </div>
-
-
-
         </div>
     </>)
 }

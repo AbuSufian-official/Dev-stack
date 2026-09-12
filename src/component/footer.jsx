@@ -5,22 +5,24 @@ import logo from './../assets/logo-text.png'
 const Footer = () => {
   return (
     <footer className="w-full bg-white">
-      <div className="mx-auto container px-6 pt-12 pb-8 lg:px-0">
+      <div className="mx-auto w-[95%]  px-6 pt-12 pb-8 lg:px-0">
 
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid  grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
 
-          {/* Brand */}
-          <div>
+          <div className='flex flex-col justify-center sm:jsutify-start sm:items-start items-center'>
+            <div className='flex justify-center items-center gap-2'>
+              <img src={logo} alt="Dev Stack" className='w-[40px]'/>
+            <p className="text-[23px] font-bold ">Dev <span className="bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0] bg-clip-text text-transparent">Stack</span></p>
+
+            </div>
             
-            <img src={logo} alt="Dev Stack"/>
 
-            <p className="mt-4 max-w-[350px] text-[14px] leading-[18px] text-[#7A879F]">
+            <p className="text-center sm:text-start mt-4 max-w-[350px] text-[14px] leading-[18px] text-[#7A879F]">
               Curated tools, technologies, and resources for developers building
               modern software.
             </p>
 
-            {/* Social Links */}
+   
             <div className="mt-5 flex items-center gap-5">
               <a
                 href="#"
@@ -28,14 +30,14 @@ const Footer = () => {
               >
                 GitHub
               </a>
-
+              <span className='sm:hidden'>•</span>
               <a
                 href="#"
                 className="text-[14px] font-medium text-[#34415A] transition-colors duration-200 hover:text-[#D91B7E]"
               >
                 Twitter
               </a>
-
+              <span className='sm:hidden'>•</span>
               <a
                 href="#"
                 className="text-[14px] font-medium text-[#34415A] transition-colors duration-200 hover:text-[#D91B7E]"
@@ -45,8 +47,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Product */}
-          <div>
+ 
+          <div className='hidden sm:block'>
             <h3 className="mb-4 text-[14px] font-semibold uppercase tracking-wide text-[#182238]">
               Product
             </h3>
@@ -81,8 +83,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
+     
+          <div className='hidden sm:block'>
             <h3 className="mb-4 text-[14px] font-semibold uppercase tracking-wide text-[#182238]">
               Company
             </h3>
@@ -117,8 +119,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
+    
+          <div className='hidden sm:block'>
             <h3 className="mb-4 text-[14px] font-semibold uppercase tracking-wide text-[#182238]">
               Legal
             </h3>
@@ -145,11 +147,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
+   
         <div className="mt-12 border-t border-[#EDF0F5]"></div>
 
-        {/* Bottom Footer */}
-        <div className="flex flex-col gap-4 pt-7 sm:flex-row sm:items-center sm:justify-between">
+
+        <div className="flex  gap-4 pt-7 flex-row items-center justify-between">
           <p className="text-[14px] text-[#9AA7BC]">
             © 2026 Dev Stack. All rights reserved.
           </p>

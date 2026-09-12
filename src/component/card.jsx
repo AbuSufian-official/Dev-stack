@@ -7,15 +7,7 @@ const Card = ({techData,stackData,setStackData}) => {
 
 let data=use(techData)
 
-
-
-
-
-
-
-
   return (
-
 
     <>
     {data.map((obj)=>{
@@ -24,11 +16,6 @@ let data=use(techData)
       
       </>)
     })}
-
-
-
-
-
 
     </>
   );

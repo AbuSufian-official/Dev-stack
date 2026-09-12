@@ -6,17 +6,17 @@ const StackSection = ({stackData,setStackData}) => {
     function hendelRemoveAllBtn(){
         setStackData([])
 
-         toast(`Remove all data from stack`, {
-        position: "bottom-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+          toast.success(`Remove all from stack`, {
+position: "bottom-right",
+autoClose: 1000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
     }
     return (<>
         <div className=" border border-[#e7edf5] bg-white px-4 py-6 rounded-[20px]">
