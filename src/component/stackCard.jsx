@@ -1,13 +1,13 @@
 import { RxCross1 } from "react-icons/rx";
 import { toast,Bounce } from 'react-toastify';
 
-const StackCard = ({ stackData, setStackData, stackObj,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj }) => {
+const StackCard = ({ stackData, setStackData, stackObj }) => {
 
     function handelDelBtn(value) {
         if (stackData.includes(value)) {
             let filterData = stackData.filter((n) => n.id !== value.id)
             setStackData(filterData)
-            setIsStackhasSelectedDataObj(value)
+            
 
             toast.success(`${value.name} remove from stack`, {
                 position: "bottom-right",
@@ -27,7 +27,7 @@ const StackCard = ({ stackData, setStackData, stackObj,isStackhasSelectedDataObj
 
     return (<>
         <div className="border border-[#66708593] flex justify-between items-center px-4 py-3 rounded-[10px]">
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-center items-center gap-0 sm:gap-2">
                 <div>
                     <img src={stackObj.icon} alt={stackObj.name} width={'30px'} />
                 </div>

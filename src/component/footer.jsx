@@ -1,5 +1,5 @@
 import logo from './../assets/logo-text.png'
-
+import {brandColor} from'./../App'
 
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className='flex flex-col justify-center sm:jsutify-start sm:items-start items-center'>
             <div className='flex justify-center items-center gap-2'>
               <img src={logo} alt="Dev Stack" className='w-[40px]'/>
-            <p className="text-[23px] font-bold ">Dev <span className="bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0] bg-clip-text text-transparent">Stack</span></p>
+            <p className="text-[23px] font-bold ">Dev <span className={`${brandColor} bg-clip-text text-transparent`}>Stack</span></p>
 
             </div>
             

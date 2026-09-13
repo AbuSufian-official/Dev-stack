@@ -1,15 +1,17 @@
 import sideimg from './../assets/banner-stack.png'
+import { brandColor } from '../App';
 const Hero = () => {
+    //bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0]
     return (
         <section className="w-full overflow-hidden bg-white">
-            <div className="w-[95%] mx-auto px-2 flex flex-col md:flex-row gap-0 sm:gap-2 justify-between items-center py-5 md:py-2 ">
+            <div className="w-[95%] mx-auto px-1 sm:px-2 flex flex-col md:flex-row gap-0 sm:gap-2 justify-between items-center py-5 md:py-2 ">
 
                 {/* LEFT CONTENT */}
                 <div className="flex flex-col justify-center items-center md:items-start md:justify-normal w-full md:w-[55%]">
 
-                    <h1 className="text-center md:text-start text-[36px] font-extrabold leading-[1.05] tracking-[-1.5px] text-[#101828] sm:text-[42px] md:text-[30px] lg:text-5xl 2xl:text-5xl">
+                    <h1 className="text-center md:text-start text-[29px] sm:text-[36px] font-extrabold leading-[1.05] tracking-[-1.5px] text-[#101828] sm:text-[42px] md:text-[30px] lg:text-5xl 2xl:text-5xl">
                         Build Your Ideal
-                        <span className="block bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0] bg-clip-text text-transparent">
+                        <span className= {`block ${brandColor} bg-clip-text text-transparent`}>
                             Development Stack
                         </span>
                     </h1>
@@ -24,9 +26,9 @@ const Hero = () => {
                     <div className="mt-8 text-[14px] flex items-center gap-1 sm:gap-4">
 
                         <button
-                            className="
+                            className={`
                 rounded-md
-                bg-gradient-to-r from-[#ff6a00] to-[#ec4899]
+                ${brandColor}
                 px-3 py-2
                 
                  font-semibold text-white
@@ -35,7 +37,7 @@ const Hero = () => {
                 hover:-translate-y-1
                 hover:scale-105
                 hover:shadow-lg
-              "
+              `}
                         >
                             Explore Technologies
                         </button>

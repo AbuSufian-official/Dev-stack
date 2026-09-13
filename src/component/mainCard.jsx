@@ -1,18 +1,12 @@
-import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { Bounce, toast } from "react-toastify";
 import { IoIosStar } from "react-icons/io";
 
-const MainCard = ({ obj, stackData, setStackData,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj}) => {
+const MainCard = ({ obj, stackData, setStackData}) => {
 
   
   function handelSelectStackBtn(value) {
     
-    setIsStackhasSelectedDataObj (value)
-    
-
-
-
     if (Boolean(stackData.find(n => n.id == value.id))) {
       toast.error(`${value.name} alredy added `, {
         position: "bottom-right",
@@ -25,8 +19,6 @@ const MainCard = ({ obj, stackData, setStackData,isStackhasSelectedDataObj,setIs
         theme: "light",
         transition: Bounce,
       });
-
-
       return;
     } else {
       setStackData([...stackData, value])
@@ -45,9 +37,7 @@ const MainCard = ({ obj, stackData, setStackData,isStackhasSelectedDataObj,setIs
         theme: "light",
         transition: Bounce,
       });
-      // isStackhasSelectedDataFunc(value)
-
-
+      
 
 
     }
@@ -59,18 +49,15 @@ const MainCard = ({ obj, stackData, setStackData,isStackhasSelectedDataObj,setIs
       console.log(aa)
       return aa
     } 
-    // isStackhasSelectedDataFunc()
-  // console.log(isStackhasSelectedDataObj)
+
     let isadd=isStackhasSelectedDataFunc()
-    // console.log(isadd)
-// console.log(isadd)
-// console.log(isadd)
+
 
   return (<>
 
 
     {/*daisuy ui card*/}
-    {/* text-[#0798e8]  bg-[#f0f9ff]  border-[#d7edff]*/}
+   
     <div key={obj.id} className={`border rounded-[28px] ${isadd ? `border-[#D91B7E]` : `border-[#e7edf5]`} card w-auto bg-base-100 shadow-sm`}>
       <div className="card-body">
         <div className="flex justify-between">

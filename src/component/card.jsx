@@ -2,7 +2,7 @@ import { use, } from "react";
 import MainCard from "./mainCard";
 
 
-const Card = ({ techData,stackData,setStackData,isStackhasSelectedDataObj,setIsStackhasSelectedDataObj,}) => {
+const Card = ({ techData,stackData,setStackData}) => {
  
 
   let data = use(techData)
@@ -13,7 +13,7 @@ const Card = ({ techData,stackData,setStackData,isStackhasSelectedDataObj,setIsS
 
                {data.map((obj) => {
             return (<>
-              <MainCard obj={obj} stackData={stackData} setStackData={setStackData} isStackhasSelectedDataObj={isStackhasSelectedDataObj} setIsStackhasSelectedDataObj={setIsStackhasSelectedDataObj} />
+              <MainCard obj={obj} stackData={stackData} setStackData={setStackData}  />
 
             </>)
           })}

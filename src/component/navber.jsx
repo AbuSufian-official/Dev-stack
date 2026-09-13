@@ -1,6 +1,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import logo from './../assets/logo-text.png'
 import { useState } from "react";
+import { brandColor } from "../App";
 const Navber = () => {
 
     let [isopen, setIsopen] = useState(false)
@@ -14,7 +15,7 @@ const Navber = () => {
                     <div onClick={() => mobilemanu()} className=" cursor-pointer text-2xl md:hidden hover:bg-[#D91B7E] hover:text-white px-2 py-2 rounded-[10px]"><RxHamburgerMenu /></div>
                     <div className="hover:scale-105  md:w-auto transition-all flex items-center gap-1 sm:gap-2">
                         <img  src={logo} className="w-30% md:w-auto" />
-                        <p className="text-[100%] sm:text-[23px] font-bold ">Dev <span className="bg-gradient-to-r from-[#ff512f] via-[#e91e63] to-[#9c27b0] bg-clip-text text-transparent">Stack</span></p>
+                        <p className="text-[100%] sm:text-[23px] font-bold ">Dev <span className={`${brandColor} bg-clip-text text-transparent`}>Stack</span></p>
                         
                     </div>
                     <div className={`z-50 w-full overflow-hidden  border-b-1 border-b-slate-300 md:border-b-transparent md:border-b-0 backdrop-blur-sm bg-white rounded-b-2xl md:rounded-b-none md:w-auto absolute md:static top-17 left-0 md:bg-transparent md:inline-block ${isopen ? `block` : `hidden`}`}>
