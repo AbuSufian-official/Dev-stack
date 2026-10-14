@@ -38,5 +38,14 @@ This website made for user can choose Technology in a stack.User can choose mult
      Ans: Parent → Child: Pass data using props.
           Child → Parent: Pass a callback function as a prop, then call it from the child.
 
+## How to run this project
+### Requirement
+- install node js
+- install vscode IDE
 
+### Follow Process
+- 1. Firstly clone this repo
+- 2. Open this project in code editor
+- 3. Open terminal and write npm install
+ DONE..  
 
